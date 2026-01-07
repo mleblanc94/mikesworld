@@ -3,6 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import NotFound from './pages/NotFound';
+import Home from './pages/Home';
+import Interesting from './pages/Interesting';
+import Food from './pages/Food';
+import Politics from './pages/Politics';
+import Predators from './pages/Predators';
+import PublicFreakouts from './pages/PublicFreakouts';
+import Sports from './pages/Sports';
+import VideoGames from './pages/VideoGames';
+
 
 const router = createBrowserRouter([
   {
@@ -39,8 +49,8 @@ const router = createBrowserRouter([
         element: <VideoGames />
       },
       {
-        path: '/music',
-        element: <Music />
+        path: '/food',
+        element: <Food />
       }
     ]
   }
