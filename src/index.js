@@ -12,6 +12,8 @@ import Predators from './pages/Predators';
 import PublicFreakouts from './pages/PublicFreakouts';
 import Sports from './pages/Sports';
 import VideoGames from './pages/VideoGames';
+import Login from './pages/Login';
+import Signup from './pages/Signup'
 
 
 const router = createBrowserRouter([
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
       {
         path: '/food',
         element: <Food />
+      },
+      {
+        path: '/login',
+        element: <Login />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
       }
     ]
   }
