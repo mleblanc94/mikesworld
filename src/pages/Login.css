@@ -1,0 +1,20 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container {
+    height: 300px;
+    width: 700px;
+    border: 1px solid black;
+    margin-top: 200px;
+}
+
+.signup-container {
+    height: 300px;
+    width: 700px;
+    border: 1px solid black;
+    margin-top: 200px;
+}
