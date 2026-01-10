@@ -10,6 +10,10 @@ const Login = () => {
             <input type="text" name='email-input'/>
             <h2>Password</h2>
             <input type="text" name="password-input" />
+            <div className='buttons-div'>
+                <button>Login</button>
+            </div>
+            <h5>Forget Password? Click <a>here</a></h5>
             </div>
         </div>
     )
