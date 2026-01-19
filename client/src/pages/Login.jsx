@@ -68,7 +68,7 @@ const Login = () => {
             <h2>Password</h2>
             <input className='login-input' type="text" name="password" id='password' value={formState.password} onChange={handleChange} placeholder='*******' required/>
             <div className='buttons-div'>
-                <button>Login</button>
+                <button type="submit">Login</button>
             </div>
             <h5>Forget Password? Click <a>here</a></h5>
             </div>

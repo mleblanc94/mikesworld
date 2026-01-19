@@ -1,0 +1,27 @@
+{
+  "name": "mikes-world",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm start --prefix client\"",
+    "server": "npm run dev --prefix server",
+    "client": "npm start --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mleblanc94/mikesworld.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mleblanc94/mikesworld/issues"
+  },
+  "homepage": "https://github.com/mleblanc94/mikesworld#readme",
+  "dependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
