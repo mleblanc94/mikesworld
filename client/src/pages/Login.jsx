@@ -46,10 +46,9 @@ const Login = () => {
             }
 
             localStorage.setItem("token", data.token);
-
             localStorage.setItem("user", JSON.stringify(data.user));
 
-            navigate("/", { replace: true });
+            navigate("/home", { replace: true });
         } catch (err) {
             setUiError(err.message || "Login failed. Please try again.");
         } finally {
@@ -68,9 +67,12 @@ const Login = () => {
             <h2>Password</h2>
             <input className='login-input' type="text" name="password" id='password' value={formState.password} onChange={handleChange} placeholder='*******' required/>
             <div className='buttons-div'>
-                <button type="submit">Login</button>
+                <button type="submit" disabled={!canSubmit || loading}>
+                    {loading ? "Logging in..." : "Login"}
+                    </button>
+            <h5>Forget Password? <Link to='/forgotpw'>Click here</Link></h5>
+            <h5>Need an Account? <Link to='/signup'>Click here</Link></h5>
             </div>
-            <h5>Forget Password? Click <a>here</a></h5>
             </div>
             </form>
         </div>

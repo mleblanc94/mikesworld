@@ -13,7 +13,8 @@ import PublicFreakouts from './pages/PublicFreakouts';
 import Sports from './pages/Sports';
 import VideoGames from './pages/VideoGames';
 import Login from './pages/Login';
-import Signup from './pages/Signup'
+import Signup from './pages/Signup';
+import Forgotpw from './pages/Forgotpw';
 
 
 const router = createBrowserRouter([
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <Signup />
+      },
+      {
+        path: '/forgotpw',
+        element: <Forgotpw />
       }
     ]
   }

@@ -13,11 +13,10 @@
     list-style: none;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    margin: 15px;
-    top: 0px;
+.header-div a {
+  color: white;
+  text-decoration: none;
+  margin: 15px;
 }
 
 .footer-div {
