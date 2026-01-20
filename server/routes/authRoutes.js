@@ -50,8 +50,36 @@ router.post('/register', async (req, res) => {
 });
 
 // POST /api/auth/login
-router.post('/login', (req, res) => {
-    res.json({ message: 'Login route works' })
+router.post('/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({ message: "Email and password are required!" });
+        }
+
+        const normalizedEmail = email.toLowerCase().trim();
+
+        const user = await User.findOne({ email: normalizedEmail });
+        if (!user) {
+            return res.status(401).json({ message: "Invalid email or password." });
+        }
+
+        const ok = await bcrypt.compare(password, user.password);
+        if (!ok) {
+            return res.status(401).json({ message: "Invalid email or password." });
+        }
+
+        const token = signToken(user);
+
+        return res.json({
+            token,
+            user: { id: user._id, username: user.username, email: user.email },
+        });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: "Server error." })
+    }
 });
 
 module.exports = router;
