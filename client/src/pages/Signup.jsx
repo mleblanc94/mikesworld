@@ -6,6 +6,8 @@ const Signup = () => {
 
     const navigate = useNavigate();
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+    const [uiError, setUiError] = useState('');
+    const [loading, setLoading] = useState(false);
 
 
     const handleChange = (e) => {
@@ -14,22 +16,23 @@ const Signup = () => {
     }
 
     const handleSubmit = async (e) => {
-
+        e.preventDefault();
+        setUiError('')
     }
 
     return(
         <div className='login-page'>
-            <form onClick={handleSubmit}>
+            <form onSubmit={handleSubmit}>
             <div className="signup-container">
                 <h2>Email:</h2>
             <input type="text" name='email' id='email' onChange={handleChange} value={formState.email}/>
             <h2>Username:</h2>
             <input type="text" name='username' id='username' onChange={handleChange} value={formState.username}/>
             <h2>Password:</h2>
-            <input type="text" name="password" id="password" onChange={handleChange}  value={formState.password} required/>
+            <input type="password" name="password" id="password" onChange={handleChange}  value={formState.password} required/>
             <div className='buttons-div'>
-                <button>Sign up</button>
-                <button>Login</button>
+                <button type='submit'>Sign up</button>
+                <button type="button" onClick={() => navigate("/login")}>Login</button>
             </div>
             </div>
             </form>
