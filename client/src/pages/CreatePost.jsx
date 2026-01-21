@@ -19,6 +19,41 @@ const CreatePost = () => {
     const canSubmit = formState.title.trim() && formState.body.trim() && formState.category.trim();
 
     const handleSubmit = async (e) => {
+        e.preventDefault();
+        setUiError('');
+
+        const title = formState.title.trim();
+        const body = formState.body.trim();
+        const category = formState.category.trim();
+
+        if (!title || !body || !category) {
+            setUiError("Please fill out all necessary categories!");
+            return
+        }
+
+        setLoading(true);
+
+        try {
+            const res = await fetch("/api/posts", {
+                method: "POST",
+                headers: { "Content-Type": "application/json",
+                    ...(token ? { Authorization: `Bearer ${token}` } : {}),
+                 },
+                body: JSON.stringify({ title, body, category }),
+            })
+
+            const data = await res.json().catch(() => ({}));
+
+            if (!res.ok) {
+                throw new Error(data.message || "Creating post Failed!");
+            }
+
+            navigate("/", { replace: true })
+        } catch (err) {
+            setUiError(err.message || "Posting new post failed.");
+        } finally {
+            setLoading(false);
+        }
 
     }
 
@@ -28,9 +63,9 @@ const CreatePost = () => {
             <form onSubmit={handleSubmit}>
             <div className="create-post">
                 <h3>Post Title:</h3>
-                <input name='post-title' id='post-title' onChange={handleChange} value={formState.title}></input>
+                <input name='title' id='post-title' onChange={handleChange} value={formState.title}></input>
                 <h3>Post Body:</h3>
-                <textarea name="post-body" id="post-body" cols="50" rows="10" onChange={handleChange} value={formState.body}></textarea>
+                <textarea name="body" id="post-body" cols="50" rows="10" onChange={handleChange} value={formState.body}></textarea>
                 <h3>Post Category:</h3>
                 <select name="category" id="category" onChange={handleChange} value={formState.category}>
                     <option value="predators">Predators</option>
