@@ -25,7 +25,7 @@ const router = createBrowserRouter([
     children: [
       {
       index: true,
-      element: <Login />
+      element: <Home />
       },
       {
         path: '/predators',
@@ -56,8 +56,8 @@ const router = createBrowserRouter([
         element: <Food />
       },
       {
-        path: '/home',
-        element: <Home />
+        path: '/login',
+        element: <Login />
       },
       {
         path: '/signup',

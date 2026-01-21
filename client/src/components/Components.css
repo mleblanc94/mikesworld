@@ -27,3 +27,31 @@
     background-color: black;
     color: white;
 }
+
+.header-list {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.header-spacer {
+  flex: 1;
+}
+
+.header-logout {
+  margin-left: 12px;
+}
+
+.header-div {
+  background-color: black;
+}
+
+.header-list a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.header-list a:hover {
+  text-decoration: underline;
+}
