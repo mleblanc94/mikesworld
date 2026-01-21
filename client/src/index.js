@@ -15,6 +15,7 @@ import VideoGames from './pages/VideoGames';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Forgotpw from './pages/Forgotpw';
+import CreatePost from './pages/CreatePost'
 
 
 const router = createBrowserRouter([
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: '/forgotpw',
         element: <Forgotpw />
+      },
+      {
+        path: '/create',
+        element: <CreatePost />
       }
     ]
   }

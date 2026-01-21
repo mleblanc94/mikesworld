@@ -28,6 +28,7 @@ const Header = () => {
                 <Link to='/publicfreakouts'>Public Freakouts</Link>
                 <Link to='/sports'>Sports</Link>
                 <Link to='/videogames'>VideoGames</Link>
+                <Link to='/create'>Create</Link>
 
                 {/* Right side */}
             <span className="header-spacer" />
