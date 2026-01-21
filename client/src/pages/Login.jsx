@@ -48,7 +48,7 @@ const Login = () => {
             localStorage.setItem("token", data.token);
             localStorage.setItem("user", JSON.stringify(data.user));
 
-            navigate("/home", { replace: true });
+            navigate("/", { replace: true });
         } catch (err) {
             setUiError(err.message || "Login failed. Please try again.");
         } finally {

@@ -45,7 +45,7 @@ const Signup = () => {
             }
 
             localStorage.setItem("token", data.token);
-            navigate("/home", { replace: true });
+            navigate("/", { replace: true });
         } catch (err) {
             setUiError(err.message || "Signup failed.")
         } finally {
@@ -68,7 +68,7 @@ const Signup = () => {
                 <button type='submit' disabled={!canSubmit || loading}>
                     {loading ? "Creating..." : "Sign up"}
                     </button>
-                <button type="button" onClick={() => navigate("/")}>Already have an account?</button>
+                <button type="button" onClick={() => navigate("/login")}>Already have an account?</button>
             </div>
             </div>
             </form>
