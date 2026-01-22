@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Home = () => {
 
-    const [posts, setPosts] = useState({});
+    const [posts, setPosts] = useState([]);
     const [query, setQuery] = useState('');
 
       useEffect(() => {
@@ -28,15 +28,19 @@ const Home = () => {
         <div>
             <h1 className="title">Mike's World!</h1>
             <h3>Latest News</h3>
-              {posts.map((post) => {
+            { posts.length > 0 ? (
+              posts.map((post) => {
                 return (
-                    <div className='post-cards'>
+                    <div className='post-cards' key={post._id}>
                         <h2>{post.title}</h2>
                         <p>{post.body}</p>
                         <h6>{post.category}</h6>
                     </div>
-                )
-              })}
+                )}
+              )
+            ) : (
+                <p>There are no posts!</p>
+            )}
         </div>
     )
 }
