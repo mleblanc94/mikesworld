@@ -19,13 +19,15 @@ const Sports = () => {
             }
         }
         fetchData();
-    }, [])
+    }, []);
+
+    const sportsPosts = posts.filter((post) => post.category === "sports");
 
     return(
         <div>
             <h1>Sports placeholder</h1>
-            {posts.length > 0 ? (
-                posts.map((post) => {
+            {sportsPosts.length > 0 ? (
+                sportsPosts.map((post) => {
                     return (
                         <div className='post-cards' key={post._id}>
                             <h2>{post.title}</h2>
@@ -34,7 +36,9 @@ const Sports = () => {
                         </div>
                     )
                 })
-            ) : ()}
+            ) : (
+                <p>There are no posts for this category!</p>
+            )}
         </div>
     )
 }
