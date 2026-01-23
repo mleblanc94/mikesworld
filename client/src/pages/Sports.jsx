@@ -24,6 +24,17 @@ const Sports = () => {
     return(
         <div>
             <h1>Sports placeholder</h1>
+            {posts.length > 0 ? (
+                posts.map((post) => {
+                    return (
+                        <div className='post-cards' key={post._id}>
+                            <h2>{post.title}</h2>
+                            <p>{post.body}</p>
+                            <h6>{post.category}</h6>
+                        </div>
+                    )
+                })
+            ) : ()}
         </div>
     )
 }
