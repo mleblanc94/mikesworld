@@ -1,9 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Food = () => {
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+            const response = await fetch('api/posts');
+            if (!response.ok) {
+                throw new Error('Cannot get data from API')
+            }
+            const result = response.json();
+            setPosts(result);
+            } catch (error) {
+                console.error(error)
+            }
+        }
+        fetchData();
+    }, []);
+
+    const foodPosts = posts.filter((post) => post.category === "food");
+
     return(
         <div>
-            <h1>Food placeholder</h1>
+            <h1>Food</h1>
+            {foodPosts.length > 0 ? (
+                foodPosts.map((post) => {
+                    return (
+                        <div className="post-card" key={post._id}>
+                            <h2>{post.title}</h2>
+                            <p>{post.body}</p>
+                            <h6>{post.category}</h6>
+                        </div>
+                    )
+                })
+            ) : (
+                <p>There are no posts for this category!</p>
+            )}
         </div>
     )
 }
