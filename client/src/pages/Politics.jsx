@@ -28,10 +28,11 @@ const Politics = () => {
             {politicsPosts.length > 0 ? (
                 politicsPosts.map((post) => {
                     return (
+                        <div className="card-container">
                         <div className='post-card' key={post._id}>
                             <h2>{post.title}</h2>
                             <p>{post.body}</p>
-                            <h6>{post.category}</h6>
+                        </div>
                         </div>
                     )
                 })
