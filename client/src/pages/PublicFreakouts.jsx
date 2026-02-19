@@ -11,7 +11,7 @@ const PublicFreakouts = () => {
             if (!response.ok) {
                 throw new Error('Error pulling from the API');
             }
-            const result = response.json();
+            const result = await response.json();
             setPosts(result);
             } catch (error) {
                 console.error(error)
@@ -21,7 +21,7 @@ const PublicFreakouts = () => {
     }, [])
 
 
-    const publicFreakoutCategory = posts.filter((post) => post.category === "public-freakouts")
+    const publicFreakoutCategory = posts.filter((post) => post.category === "public-freakouts");
 
     return(
         <div>
@@ -29,10 +29,11 @@ const PublicFreakouts = () => {
             {publicFreakoutCategory.length > 0 ? (
                 publicFreakoutCategory.map((post) => {
                     return (
+                        <div className="card-container">
                         <div className='post-cards' key={post._id}>
                             <h2>{post.title}</h2>
                             <p>{post.body}</p>
-                            <h6>{post.category}</h6>
+                        </div>
                         </div>
                     )
                 })

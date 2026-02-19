@@ -29,10 +29,11 @@ const Sports = () => {
             {sportsPosts.length > 0 ? (
                 sportsPosts.map((post) => {
                     return (
+                        <div className="card-container">
                         <div className='post-cards' key={post._id}>
                             <h2>{post.title}</h2>
                             <p>{post.body}</p>
-                            <h6>{post.category}</h6>
+                        </div>
                         </div>
                     )
                 })

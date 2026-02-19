@@ -28,10 +28,11 @@ const VideoGames = () => {
             {videoGamesPosts.length > 0 ? (
                 videoGamesPosts.map((post) => {
                     return (
+                        <div className="card-container">
                         <div className="post-cards" key={post._id}>
                             <h1>{post.title}</h1>
                             <p>{post.body}</p>
-                            <h6>{post.category}</h6>
+                        </div>
                         </div>
                     )
                 })
