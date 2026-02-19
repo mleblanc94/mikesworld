@@ -11,7 +11,7 @@ const Predators = () => {
                 if (!response.ok) {
                     throw new Error("Error getting the posts from the API!");
                 }
-                const result = response.json();
+                const result = await response.json();
                 setPosts(result)
             } catch (error) {
                 console.error(error)
