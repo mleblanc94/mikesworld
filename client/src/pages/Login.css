@@ -31,3 +31,11 @@ button {
     margin-top: 150px;
     padding: 20px;
 }
+
+#password {
+    margin-bottom: 5px;
+}
+
+.error-message {
+    color: red;
+}
