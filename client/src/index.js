@@ -16,6 +16,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Forgotpw from './pages/Forgotpw';
 import CreatePost from './pages/CreatePost'
+import ProtectedRoute from './components/ProtectedRoute';
 
 
 const router = createBrowserRouter([
@@ -24,9 +25,25 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <NotFound />,
     children: [
+
+      // Public Routes
       {
-      index: true,
-      element: <Home />
+      path: '/login',
+      element: <Login />
+      },
+      {
+        path: '/signup',
+        element: <Signup />
+      },
+      {
+        path: '/forgotpw',
+        element: <Forgotpw />
+      },
+
+      // Protected Routes
+      {
+        index: true,
+        element: <Home />
       },
       {
         path: '/predators',
@@ -55,18 +72,6 @@ const router = createBrowserRouter([
       {
         path: '/food',
         element: <Food />
-      },
-      {
-        path: '/login',
-        element: <Login />
-      },
-      {
-        path: '/signup',
-        element: <Signup />
-      },
-      {
-        path: '/forgotpw',
-        element: <Forgotpw />
       },
       {
         path: '/create',
