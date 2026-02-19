@@ -65,7 +65,12 @@ const Login = () => {
             <h2>Username/Email:</h2>
             <input className='login-input' type="email" name='email' id='email' value={formState.email} placeholder='Username' onChange={handleChange} required/>
             <h2>Password</h2>
-            <input className='login-input' type="text" name="password" id='password' value={formState.password} onChange={handleChange} placeholder='*******' required/>
+            <input className='login-input' type="password" name="password" id='password' value={formState.password} onChange={handleChange} placeholder='*******' required/>
+            {uiError && (
+                <div className="error-message">
+                    {uiError}
+                    </div>
+            )}
             <div className='buttons-div'>
                 <button type="submit" disabled={!canSubmit || loading}>
                     {loading ? "Logging in..." : "Login"}
