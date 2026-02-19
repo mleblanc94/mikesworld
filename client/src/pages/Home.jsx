@@ -24,12 +24,21 @@ const Home = () => {
                     fetchData();
                 }, [])
 
+    const handleQueryChange = (e) => {
+        setQuery(e.target.value)
+    }
+
+    const filtered = posts.filter((item) => {
+    return item.title.toLowerCase().includes(query.toLowerCase());
+})
+
     return(
         <div>
             <h1 className="title">Mike's World!</h1>
             <h3>Latest News</h3>
-            { posts.length > 0 ? (
-              posts.map((post) => {
+            <input type="text" id="search-title" value={query} placeholder="Search Title..." onChange={handleQueryChange}/>
+            { filtered.length > 0 ? (
+              filtered.map((post) => {
                 return (
                     <div className="card-container">
                     <div className='post-cards' key={post._id}>

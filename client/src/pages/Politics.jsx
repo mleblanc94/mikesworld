@@ -11,7 +11,7 @@ const Politics = () => {
                 if (!response.ok) {
                     throw new Error('Error getting data from the API!');
                 }
-                const result = response.json();
+                const result = await response.json();
                 setPosts(result);
             } catch (error) {
                 console.error(error);
@@ -29,7 +29,7 @@ const Politics = () => {
                 politicsPosts.map((post) => {
                     return (
                         <div className="card-container">
-                        <div className='post-card' key={post._id}>
+                        <div className='post-cards' key={post._id}>
                             <h2>{post.title}</h2>
                             <p>{post.body}</p>
                         </div>

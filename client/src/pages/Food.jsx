@@ -11,7 +11,7 @@ const Food = () => {
             if (!response.ok) {
                 throw new Error('Cannot get data from API')
             }
-            const result = response.json();
+            const result = await response.json();
             setPosts(result);
             } catch (error) {
                 console.error(error)

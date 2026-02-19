@@ -11,7 +11,7 @@ const Interesting = () => {
                 if (!response.ok) {
                     throw new Error('Error getting data from the API');
                 }
-                const result = response.json();
+                const result = await response.json();
                 setPosts(result);
             } catch (error) {
                 console.error(error);
