@@ -55,3 +55,7 @@
 .header-list a:hover {
   text-decoration: underline;
 }
+
+.header-user {
+  color: white;
+}
