@@ -24,7 +24,7 @@ const Politics = () => {
 
     return(
         <div>
-            <h1>Politics</h1>
+            <h1>Politics Posts</h1>
             {politicsPosts.length > 0 ? (
                 politicsPosts.map((post) => {
                     return (

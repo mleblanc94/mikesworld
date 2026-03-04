@@ -24,7 +24,7 @@ const Food = () => {
 
     return(
         <div>
-            <h1>Food</h1>
+            <h1>Food Posts</h1>
             {foodPosts.length > 0 ? (
                 foodPosts.map((post) => {
                     return (

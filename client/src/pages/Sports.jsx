@@ -25,7 +25,7 @@ const Sports = () => {
 
     return(
         <div>
-            <h1>Sports</h1>
+            <h1>Sports Posts</h1>
             {sportsPosts.length > 0 ? (
                 sportsPosts.map((post) => {
                     return (
