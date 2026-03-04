@@ -27,7 +27,7 @@ const Header = () => {
                 <Link to='/politics'>Politics</Link>
                 <Link to='/publicfreakouts'>Public Freakouts</Link>
                 <Link to='/sports'>Sports</Link>
-                <Link to='/videogames'>VideoGames</Link>
+                <Link to='/videogames'>Video Games</Link>
                 <Link to='/create'>Create</Link>
 
                 {/* Right side */}
