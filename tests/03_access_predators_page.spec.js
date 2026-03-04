@@ -8,6 +8,6 @@ test("After logging in, access the Predators page on the website", async ({ page
 
         await page.waitForTimeout(3000);
 
-        await expect ( page.getByRole('heading', { name: 'Predators' })).toBeVisible();
+        await expect ( page.getByRole('heading', { name: 'Predators Posts' })).toBeVisible();
 
 } )

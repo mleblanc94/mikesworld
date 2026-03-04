@@ -25,7 +25,7 @@ const PublicFreakouts = () => {
 
     return(
         <div>
-            <h1>Public Freakouts</h1>
+            <h1>Public Freakouts Posts</h1>
             {publicFreakoutCategory.length > 0 ? (
                 publicFreakoutCategory.map((post) => {
                     return (

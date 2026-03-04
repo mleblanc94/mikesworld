@@ -23,7 +23,7 @@ const Predators = () => {
     const predatorPosts = posts.filter((post) => post.category === "predators");
     return(
         <div>
-            <h1>Predators</h1>
+            <h1>Predators Posts</h1>
             {predatorPosts.length > 0 ? (
                 predatorPosts.map((post) => {
                     return (

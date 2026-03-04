@@ -24,7 +24,7 @@ const Interesting = () => {
 
     return(
         <div>
-            <h1>Interesting</h1>
+            <h1>Interesting Posts</h1>
             {interestingPosts.length > 0 ? (
                 interestingPosts.map((post) => {
                     return (
